@@ -104,12 +104,15 @@ var game = {
     checkMaxScoreReached: function() {
         if (this.playerOne.score === 10) {
             alert("playerOne won !");
-            this.playersBallLayer = game.display.createLayer("joueursetballe", this.groundWidth, this.groundHeight, undefined, 2, undefined, 0, 0);
-            game.display.drawTextInLayer(this.playersBallLayer, "JOUEURSETBALLE", "10px Arial", "#FF0000", 100, 100);
+            this.victoryScreen = game.display.createLayer("victoryScreen", this.groundWidth, this.groundHeight, undefined, 1000, "#000000", 0, 0);
+            game.display.drawImageInLayer(this.victoryScreen, this.groundWidth, this.groundHeight, 0, 0);
+            this.ball.speed = 0;
         }
         if (this.playerTwo.score === 10) {
             alert("playerTwo won !");
-            this.init();
+            this.victoryScreen = game.display.createLayer("victoryScreen", this.groundWidth, this.groundHeight, undefined, 1000, "#000000", 0, 0);
+            game.display.drawImageInLayer(this.victoryScreen, this.groundWidth, this.groundHeight, 0, 0);
+            this.ball.speed = 0;
         }
     },
 

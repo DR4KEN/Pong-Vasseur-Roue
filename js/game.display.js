@@ -66,6 +66,11 @@ game.display = {
         targetLayer.context2D.fillRect(x, y, width, heigth);
     },
 
+    drawImageInLayer: function(targetLayer, width, height, x, y) {
+        var image = document.getElementById("source");
+        targetLayer.context2D.drawImage(image, x, y, width, height);
+    },
+
     drawTextInLayer: function(targetLayer, text, font, color, x, y) {
         targetLayer.context2D.font = font;
         targetLayer.context2D.fillStyle = color;
